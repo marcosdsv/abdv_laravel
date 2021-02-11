@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\Email;
+
 class HomeController extends Controller
 {
     /**
@@ -13,7 +16,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -21,8 +24,19 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+
+    public function contatos()
     {
-        return view('home');
+        return view('contato');
+    }
+
+    public function emailContato(Request $request)
+    {
+        //var_dump($request->all());
+        //die();
+        //email responsável por enviar os emails.
+        $recipient = 'teste@email.com';
+        //estanciando a classe Email da pasta mail.
+        Mail::to([$recipient])->send(new Email());
     }
 }

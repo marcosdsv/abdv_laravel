@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\RelatorioController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,5 +19,7 @@ Route::get('/', function () {
 });
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('/relatorios', 'App\Http\Controllers\RelatorioController');
+
+Route::resource('relatorios', RelatorioController::class);
+Route::get('/contatos', [App\Http\Controllers\HomeController::class, 'contatos'])->name('contatos');
+Route::post('/contatos', [App\Http\Controllers\HomeController::class, 'emailContato'])->name('email.contatos');

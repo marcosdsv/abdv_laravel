@@ -30,7 +30,7 @@
         <a class="nav-link" href="#">Relatório de atividade</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contatos</a>
+        <a class="nav-link" href="{{ route('contatos') }}">{{ __('Contatos') }}</a>
       </li>
 	     <!-- Authentication Links -->
                         @guest

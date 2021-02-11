@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
-<form method="post" action="{{route('relatorios.store')}}>
+<form method="post" action="{{route('relatorios.store')}}" enctype="multipart/form-data">
+@csrf
                         <div class="form-group>
 						row">
                             <label for="titulo" class="col-md-4 col-form-label text-md-right">{{ __('Título') }}</label>
@@ -24,6 +25,21 @@
                                 <input id="descricao" type="text" class="form-control @error('descricao') is-invalid @enderror" name="descricao" value="{{ old('descricao') }}" required autocomplete="descricao" autofocus placeholder="Digite a descrição do relatório">
 
                                 @error('descricao')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group>
+						row">
+                            <label for="link" class="col-md-4 col-form-label text-md-right">{{ __('Link matéria') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="link" type="text" class="form-control @error('link') is-invalid @enderror" name="link" value="{{ old('link') }}" autocomplete="link" autofocus placeholder="coloque o link da matéria realizada">
+
+                                @error('link')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -75,6 +91,13 @@
                                 @enderror
                             </div>
                         </div>
-
+						
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Cadastrar') }}
+                                </button>
+                            </div>
+                        </div>
 </form>
 @endsection;
