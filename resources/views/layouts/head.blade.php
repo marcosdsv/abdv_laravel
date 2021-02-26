@@ -3,7 +3,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="#">Webmail</a>
+        <a class="nav-link" href="https://www.google.com.br/" target="blank">Webmail</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="#">Início <span class="sr-only">(Página atual)</span></a>
@@ -12,22 +12,22 @@
         <a class="nav-link" href="#">Diretoria</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Rádio</a>
+        <a class="nav-link" href="https://www.radios.com.br/aovivo/radio-mdv-brasilia/145488" target="blank">Rádio</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Estatuto</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Eventos</a>
+        <a class="nav-link" href="{{ route('eventos.index') }}">{{ __('Eventos') }}</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Esportes</a>
+        <a class="nav-link" href="{{ route('esportes.index') }}">{{ __('Esportes') }}</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Notícias</a>
+        <a class="nav-link" href="{{ route('noticias.index') }}">{{ __('Notícias') }}</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Relatório de atividade</a>
+        <a class="nav-link" href="{{ route('relatorios.index') }}">{{ __('Relatório de atividades') }}</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{{ route('contatos') }}">{{ __('Contatos') }}</a>

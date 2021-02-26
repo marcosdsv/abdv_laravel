@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
- 
-use App\Models\Relatorio;
 
-class RelatorioController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +13,7 @@ class RelatorioController extends Controller
      */
     public function index()
     {
-		        $relatorios = Relatorio::get();
-		        return view('relatorio.index', [
-            'relatorios' => Relatorio::paginate(1)
-        ]);
+        //
     }
 
     /**
@@ -28,7 +23,7 @@ class RelatorioController extends Controller
      */
     public function create()
     {
-        return view('relatorio.create');
+        //
     }
 
     /**
@@ -39,17 +34,7 @@ class RelatorioController extends Controller
      */
     public function store(Request $request)
     {
-        //var_dump($request->all());
-		//die();
-		$relatorio = Relatorio::create([
-		'titulo' => $request['titulo'],
-		'descricao' => $request['descricao'],
-		'link' => $request['link'],
-		'videos' => $request['video'],
-		'fotos' => $request['foto'],
-		'descimg' => $request['descimg'],
-		]);
-return redirect()->route('relatorios.create');
+        //
     }
 
     /**

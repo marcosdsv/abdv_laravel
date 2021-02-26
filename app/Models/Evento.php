@@ -5,15 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Relatorio extends Model
+class Evento extends Model
 {
     	protected $fillable = [
 		'titulo',
-		'descricao',
-		'link',
-		'videos',
-		'fotos',
-		'descimg'
+		'descricao'
 	];
-	
 }
