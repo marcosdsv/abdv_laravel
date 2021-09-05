@@ -6,7 +6,7 @@
         <a class="nav-link" href="https://www.google.com.br/" target="blank">Webmail</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Início <span class="sr-only">(Página atual)</span></a>
+        <a class="nav-link" href="{{ route('noticias.index') }}">{{ __('Home') }} <span class="sr-only">(Página atual)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Diretoria</a>
