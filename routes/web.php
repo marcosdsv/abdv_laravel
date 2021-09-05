@@ -19,13 +19,10 @@ use App\Http\Controllers\EventoController;
 |
 */
 
-Route::get('/', function () {
-    //return view('welcome');
-	return view('inicio');
-});
+//Route::get('/', function () {return view('noticia.index');});
 Auth::routes();
 
-
+Route::get('/', [NoticiaController::class, 'index']);
 Route::resource('relatorios', RelatorioController::class);
 Route::resource('noticias', NoticiaController::class);
 Route::resource('esportes', EsporteController::class);
