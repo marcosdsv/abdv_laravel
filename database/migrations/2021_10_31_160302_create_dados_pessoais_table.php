@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDiretoriasTable extends Migration
+class CreateDadosPessoaisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateDiretoriasTable extends Migration
      */
     public function up()
     {
-        Schema::create('diretorias', function (Blueprint $table) {
+        Schema::create('dados_pessoais', function (Blueprint $table) {
             $table->id();
-			$table->foreignId('fk_dados_pessoais')->constrained('dadospessoais');
-			$table->foreignId('fk_cargo')->constrained('cargos');
+            $table->string('rg', 30);
+            $table->string('cpf', 11);
+            $table->date('data_nascimento');
+            $table->foreignId('fk_contatos')->constrained('contatos');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateDiretoriasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('diretorias');
+        Schema::dropIfExists('dados_pessoais');
     }
 }
