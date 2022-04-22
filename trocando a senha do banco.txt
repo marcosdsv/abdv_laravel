@@ -1,0 +1,6 @@
+ALTER USER 'root'@'localhost' IDENTIFIED BY '1234';
+CREATE USER 'wolmir'@'localhost' IDENTIFIED BY 'w123';
+ALTER USER 'marcos'@'localhost' IDENTIFIED WITH mysql_native_password BY 'm1234';
+GRANT ALL PRIVILEGES ON * . * TO 'marcos'@'localhost';
+FLUSH PRIVILEGES;
+mysql -u root -p
